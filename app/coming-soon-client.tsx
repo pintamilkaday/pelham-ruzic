@@ -27,7 +27,7 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
       <div className="fixed inset-0 bg-black/35 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 text-center max-w-[600px] px-6">
+      <div className="relative z-10 flex flex-col items-center max-w-[600px] px-6">
         {/* Decorative line */}
         <div
           className="w-10 h-px mx-auto mb-12 animate-fade-up"
@@ -40,7 +40,7 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
 
         {/* Title */}
         <h1
-          className="animate-fade-up mb-10"
+          className="animate-fade-up mb-10 text-center"
           style={{
             fontFamily: "var(--font-title)",
             fontWeight: 700,
@@ -58,7 +58,7 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
 
         {/* Tagline */}
         <p
-          className="animate-fade-up mb-16"
+          className="animate-fade-up mb-16 text-center"
           style={{
             fontFamily: "var(--font-sans)",
             fontSize: "0.7rem",
