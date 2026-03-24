@@ -29,7 +29,7 @@ export default async function Home() {
 
   const bgImageUrl = data.backgroundImage
     ? urlFor(data.backgroundImage).width(1920).quality(85).url()
-    : "/hero-bg.jpg";
+    : "/ruffles-image.png";
 
   return <ComingSoonClient data={data} bgImageUrl={bgImageUrl} />;
 }
