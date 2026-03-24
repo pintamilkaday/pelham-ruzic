@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface ComingSoonData {
   title: string;
   tagline: string;
@@ -18,19 +20,25 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
   return (
     <main className="relative min-h-screen flex flex-col justify-center items-center overflow-hidden">
       {/* Background image */}
-      <div
-        className="fixed inset-0 bg-cover bg-center z-0"
-        style={{ backgroundImage: `url(${bgImageUrl})` }}
-      />
+      <div className="fixed inset-0 z-0">
+        <Image
+          src={bgImageUrl}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </div>
 
       {/* Dark overlay */}
       <div className="fixed inset-0 bg-black/35 z-0" />
 
       {/* Content */}
-      <div className="relative z-10 flex flex-col items-center max-w-[600px] px-6">
+      <div className="relative z-10 flex flex-col items-center max-w-[640px] px-6">
         {/* Decorative line */}
         <div
-          className="w-10 h-px mx-auto mb-12 animate-fade-up"
+          className="w-10 h-px mx-auto mb-24 animate-fade-up"
           style={{
             background: "rgba(255, 255, 255, 0.4)",
             animationDelay: "0.2s",
@@ -40,12 +48,12 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
 
         {/* Title */}
         <h1
-          className="animate-fade-up mb-10 text-center"
+          className="animate-fade-up mb-20 text-center"
           style={{
             fontFamily: "var(--font-title)",
             fontWeight: 700,
-            fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
-            lineHeight: 1.2,
+            fontSize: "clamp(1.8rem, 3.5vw, 2.4rem)",
+            lineHeight: 1.4,
             letterSpacing: "0.12em",
             textTransform: "uppercase",
             color: "#FFFFFF",
@@ -58,15 +66,15 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
 
         {/* Tagline */}
         <p
-          className="animate-fade-up mb-16 text-center"
+          className="animate-fade-up mb-28 text-center"
           style={{
             fontFamily: "var(--font-sans)",
-            fontSize: "0.7rem",
-            fontWeight: 300,
+            fontSize: "0.75rem",
+            fontWeight: 350,
             letterSpacing: "0.25em",
             textTransform: "uppercase",
             color: "rgba(255, 255, 255, 0.7)",
-            lineHeight: 1.9,
+            lineHeight: 2.35,
             animationDelay: "0.7s",
             animationFillMode: "both",
           }}
@@ -76,15 +84,15 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
 
         {/* Coming Soon */}
         <p
-          className="animate-fade-up inline-block mb-12"
+          className="animate-fade-up inline-block mb-24"
           style={{
             fontFamily: "var(--font-sans)",
-            fontSize: "0.6rem",
+            fontSize: "0.65rem",
             fontWeight: 400,
             letterSpacing: "0.35em",
             textTransform: "uppercase",
             color: "rgba(255, 255, 255, 0.6)",
-            padding: "0.8rem 0",
+            padding: "1.45rem 0",
             borderTop: "1px solid rgba(255, 255, 255, 0.25)",
             borderBottom: "1px solid rgba(255, 255, 255, 0.25)",
             animationDelay: "1s",
@@ -105,9 +113,10 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
             style={{
               fontFamily: "var(--font-sans)",
               fontSize: "0.78rem",
-              fontWeight: 300,
+              fontWeight: 350,
               color: "rgba(255, 255, 255, 0.7)",
               letterSpacing: "0.05em",
+              lineHeight: 1.6,
               textDecoration: "none",
             }}
           >
@@ -122,13 +131,15 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
 
       {/* Footer */}
       <footer
-        className="fixed bottom-0 left-0 right-0 flex justify-between px-10 py-6 animate-fade-up z-10 max-sm:flex-col max-sm:items-center max-sm:gap-1 max-sm:px-6"
+        className="fixed bottom-0 left-0 right-0 flex justify-between px-10 py-8 animate-fade-up z-10 max-sm:flex-col max-sm:items-center max-sm:gap-2 max-sm:px-6"
         style={{ animationDelay: "1.6s", animationFillMode: "both" }}
       >
         <span
           style={{
             fontSize: "0.6rem",
+            fontWeight: 350,
             letterSpacing: "0.15em",
+            lineHeight: 1.9,
             textTransform: "uppercase",
             color: "rgba(255, 255, 255, 0.5)",
           }}
@@ -139,7 +150,9 @@ export function ComingSoonClient({ data, bgImageUrl }: Props) {
         <span
           style={{
             fontSize: "0.6rem",
+            fontWeight: 350,
             letterSpacing: "0.15em",
+            lineHeight: 1.9,
             textTransform: "uppercase",
             color: "rgba(255, 255, 255, 0.5)",
           }}

@@ -1,5 +1,5 @@
 import { createClient } from "@sanity/client";
-import imageUrlBuilder from "@sanity/image-url";
+import { createImageUrlBuilder } from "@sanity/image-url";
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type SanityImageSource = any;
 
@@ -10,7 +10,7 @@ export const client = createClient({
   useCdn: true,
 });
 
-const builder = imageUrlBuilder(client);
+const builder = createImageUrlBuilder(client);
 
 export function urlFor(source: SanityImageSource) {
   return builder.image(source);
@@ -19,7 +19,7 @@ export function urlFor(source: SanityImageSource) {
 // Fetch the coming soon page data
 export async function getComingSoonPage() {
   return client.fetch(`
-    *[_type == "comingSoon"][0] {
+    *[_type == "comingSoon" && _id == "comingSoonPage"][0] {
       title,
       tagline,
       comingSoonText,

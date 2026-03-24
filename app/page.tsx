@@ -28,8 +28,13 @@ export default async function Home() {
   }
 
   const bgImageUrl = data.backgroundImage
-    ? urlFor(data.backgroundImage).width(1920).quality(85).url()
-    : "/ruffles-image.png";
+    ? urlFor(data.backgroundImage)
+        .width(1920)
+        .quality(75)
+        .fit("max")
+        .auto("format")
+        .url()
+    : "/ruffles-image.jpg";
 
   return <ComingSoonClient data={data} bgImageUrl={bgImageUrl} />;
 }
